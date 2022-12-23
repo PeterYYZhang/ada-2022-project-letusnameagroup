@@ -1,28 +1,39 @@
-# Let us make the most popular beer!
+# Trends in the American Beer Market: How can we help the declining beer styles to revive?
+
+
+## Date story website
+To learn more about our work, please visit our webpage[Let us make the most popular beer🍺!](https://letusmakepopularbeer.streamlit.app/).
 
 ## Abstract
-<!--
-Over the 20 years, beer rating websites have attracted plenty of users to give ratings and reviews about beers.
-As time passes, what is the trend of people's favorite beer styles changing in a specific region? How can breweries make changes to their products? Which areas should breweries lay more emphasis on? Meanwhile, how can we detect fake reviews and ratings? Because we cannot ensure that all the reviews are trustworthy, breweries might pay users to give high ratings, or some users rate the beer carelessly.
-In this project, we aim to solve the above questions.-->
+In this task, we aim to find out what is the trend in the **American beer market** as well as specified to specific regions. We will utilize statistical and time series modeling to analyze the trends and make some predictions, and employ sentiment analysis and natural language processing techniques to analyze consumer comments. Through this analysis, we aim to identify key trends in consumer preferences for different beer styles and understand how these preferences have evolved over time. Our findings will provide valuable insights for breweries and marketers in the industry seeking to better understand the changing preferences of beer drinkers.
 
-Over the 20 years, beer rating websites have attracted plenty of users to give ratings and reviews about beers.
-As time passes, people may change their preference for beer. We intend to use the review and scores of different beers on BeerAdvocate and RateBeer websites. To determine which factors have the most significant influence on beer's overall rating. And give production or sales suggestions to the breweries in the different regions.
-Due to the increasing number of negative reviews and water army, the consumer would easily be affected by these grading. We would like to know if this phenomenon also happened in our dataset. Because negative reviews are generally random text, we intend to train the model using reviews as input and ratings as labels. Thus detecting malicious reviews and eliminating this affection.
-
-
+## Introduction
+Beer is one of the oldest beverages in the world. With the progress of brewing technology,
+many new brands and styles have been created. Meanwhile, a proportion of breweries are still
+trying to preserve their traditional brewing techniques.
+As a significant beer consumer, the United States plays a crucial role in the world’s beer
+industry. Therefore, with the curiosity about beer among Americans, let’s have an insight into
+their beer industry. After some research, we found that the website “BeerAdvocate.” users
+are mainly from the U.S., So we retrieved the user data, brewery data, and review data,
+ranging from 1998 to 2017, from the BeerAdvocate datase
 
 ## Research questions
-1. Which aspect of the beer influences the overall rating of the beer the most?
-2. What is the relation between descriptive reviews and Overall scores? 
-3. What is the shift in people's preference for beer style over some time? How do we use the trend to give some brewing advice to Brewery?
-4. Whether the data exist fake reviews and rating. How do we distinguish the sham rating and reviews?
+### 1. Identity the sentiments in users' reviews, and extract high-frequency words to obtain useful information.<br>
+We will investigate the influence of consumer reviews on changes in beer style trends and identify the qualities that the best-selling beer should possess in the eyes of consumers. We will also provide suggestions for beer production based on our findings.
 
-## Main datasets
-**RateBeer**
+### 2. Data Visualization and Choose the popular beers<br>
+We will explore the changing trends in the popularity of the most popular beer styles in the United States from 1998 to 2017, as reflected in the number of reviews on BeerAdvocate. We will also examine the changing trends of the top 3 beer styles and make predictions about their future. Additionally, we will identify common characteristics shared by the top 3 beers.
+
+### 3. Suggestions in Brewing Beer<br>
+To investigate the relationship between beer style preference and region, we will examine the trend of beer style preference in various regions over time and generate recommendations for breweries and sellers based on the results.
+
+
+
+In this part, we conducting an analysis of consumer preferences for beer in different regions,then we have compiled all of the relevant data to provide suggestions for beer production based on our findings.
+
+
+## Datasets
 **BeerAdvocate**
-
-
 
 ## Method
 ### Data preprocessing
@@ -30,46 +41,37 @@ Due to the increasing number of negative reviews and water army, the consumer wo
 Although the initial rating data was saved in text format, they were too big to parse and analyze. Before the analysis, we used Python bash to slice and prepare the data for CSV loading by pandas.
 
 **Clean Data**
-- We first filtered out the beer data, which has less than 120 ratings. If the number of ratings is insufficient, the ratings may be biased. Also, in order to minimize the *Herding Effect* proposed in the paper *'Learning Attitudes and Attributes from Multi-Aspect Reviews'*, we need more data, so we manually set the threshold to 120 after trying several values.
-- We also find that nan values in ```overall``` coexists with ```['appearance', 'aroma', 'palate', 'taste', 'overall']```, We also checked the website manually and found that we should rate the appearance, aroma, palate, taste, and overall. So, these data are meaningless if all of these features are nan values. So we also deleted data like this.
+- We first find that nan values in ```overall``` coexists with ```['appearance', 'aroma', 'palate', 'taste', 'overall']```, We also checked the website manually and found that we should rate the appearance, aroma, palate, taste, and overall. So, these data are meaningless if all of these features are nan values. So we also deleted data like this.
 - Some reviews' *overall* scores are significant incompatible to the other 4 scores. For example, if the each of the 4 scores is less than 3, while the overall score is greater than 4, then we considered them to be invalid.
 - We will also delete the data without review text.
 
-### Analytic methods
-**Visualization**: P.S.We put some snapshots of the interactive widgets here
-- We first plot some figures about the rating distribution of the two websites, and notice that the distribution are similar, therefore we may do similar analysis on the two datasets.
 
-- We plot the distribution about abv values, and figured out that the most popular ones range from 4 to 10 Vol.
+## Analytic methods<br>
 
-- We plot an **interactive** graph that shows the top 10 most popular beer styles in a specific region in a particular year. We will use these graphs and relevant dataframes to do future analysis. *(These may also help us with the data story and the website we will create then)*
-
-  <img src="./Image/1.jpg" alt="1" style="zoom:50%;" />
-
-  <img src="./Image/2.jpg" alt="2" style="zoom:50%;" />
+- We initially conducted a statistical analysis on the pre-processed dataset to examine the relationship between the four scoring aspects and the overall score. Afterwards, we utilized a statistical model to further analyze the dataset in order to gain a better understanding of trends in consumer reviews of beer in the US beer market<br>
+<img src="Image\2.png" width="500"/>
 
 
-    
+- Consumer reviews often contain valuable insights and opinions on different beers. In order to better understand consumer preferences and opinions, it is necessary to analyze these reviews. In this study, we used sentiment analysis and natural language processing techniques to analyze the tone and content of consumer reviews. We employed the SentimentIntensityAnalyzer module from the nltk library to identify the sentiment of consumer comments and identified the most frequently mentioned keywords by consumers. These findings provide important insights into consumer preferences and opinions on different beer styles.<br>
 
-- We plot the change of the number of ratings of one particular beer style *(interactive)* over the years which helps to show whether people's preferences are shifted. We will also conduct hypothesis test on the conclusion.
+  <img src="Image\4.png" width=300 height=220/> <img src="Image\6.png" width=300  height=220/>
 
-  <img src="./Image/3.jpg" alt="3" style="zoom:50%;" />
 
-  <img src="./Image/4.jpg" alt="4" style="zoom:50%;" />
+
+- Analyze the distribution of popular beers with respect to different characteristics and summarize their features. Afterwards, use data visualization techniques to select the most popular beers.<br>
+
+  <img src="Image\7.png" width=500 height=180/>
+
+
+
+- we will perform a further analysis of the three most popular beers in the US market and use a time series model to forecast their future trends. To improve the accuracy of our predictions, we will utilize the time series prediction module in the sktime library.<br>
+
+  <img src="Image\8.png" width=500 height=180/> 
+
+- To investigate the preferences of consumers in different regions for beer styles, we utilized the bar_chart_race library to dynamically visualize the changes in consumer preferences over time. This allowed us to gain a better understanding of the evolving preferences of beer drinkers in different regions.Combining all the above factors, we aprovide suggestions for beer production based on our findings.<br>
+
+  ![Alt Text](https://github.com/Weijun-H/ada-2022-project-letusnameagroup/blob/main/gif/+United%20States,%20California.gif?raw=true)
   
-
-- We plot the number of reviews as well as the overall score over the time. These help us to know how time affects the overall score.
-
-**Statistical tests** (Finish in MileStone3)
-+ To determine whether the time has affected the overall score. We take the Overall score before 2011 and the Overall score after that making an independent t-test. 
-+ To search the relation between descriptive reviews and Overall scores. We calculate the number of positive words and negative words for each review. Then compare the difference between them. Making the paired T-test between the difference and overall score to determine whether they have the same distribution.  
-
-
-<!--
-**Detect fake rating** (In Milestone 3)
-利用Nlp分词工具将每条评论分解成Embedding，将Embedding作为input，rating作为label，进行逻辑回归训练。最后将review输入到训练好的模型当中。若预测的评分和实际的评分相差较大（相差2分以上）；则判定此为无用的评论。
--->
-
-
 
 
 
