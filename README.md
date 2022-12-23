@@ -49,24 +49,24 @@ Although the initial rating data was saved in text format, they were too big to 
 ## Analytic methods<br>
 
 - We initially conducted a statistical analysis on the pre-processed dataset to examine the relationship between the four scoring aspects and the overall score. Afterwards, we utilized a statistical model to further analyze the dataset in order to gain a better understanding of trends in consumer reviews of beer in the US beer market<br>
-<img src="Image\2.png" width="500"/>
+<img src="Image\2.png" />
 
 
 - Consumer reviews often contain valuable insights and opinions on different beers. In order to better understand consumer preferences and opinions, it is necessary to analyze these reviews. In this study, we used sentiment analysis and natural language processing techniques to analyze the tone and content of consumer reviews. We employed the SentimentIntensityAnalyzer module from the nltk library to identify the sentiment of consumer comments and identified the most frequently mentioned keywords by consumers. These findings provide important insights into consumer preferences and opinions on different beer styles.<br>
 
-  <img src="Image\4.png" width=300 height=220/> <img src="Image\6.png" width=300  height=220/>
+  <img src="Image\4.png" width=500 height=400/> <img src="Image\6.png" width=500 height=400/>
 
 
 
 - Analyze the distribution of popular beers with respect to different characteristics and summarize their features. Afterwards, use data visualization techniques to select the most popular beers.<br>
 
-  <img src="Image\7.png" width=500 height=180/>
+  <img src="Image\7.png" />
 
 
 
 - we will perform a further analysis of the three most popular beers in the US market and use a time series model to forecast their future trends. To improve the accuracy of our predictions, we will utilize the time series prediction module in the sktime library.<br>
 
-  <img src="Image\8.png" width=500 height=180/> 
+  <img src="Image\8.png" /> 
 
 - To investigate the preferences of consumers in different regions for beer styles, we utilized the bar_chart_race library to dynamically visualize the changes in consumer preferences over time. This allowed us to gain a better understanding of the evolving preferences of beer drinkers in different regions.Combining all the above factors, we aprovide suggestions for beer production based on our findings.<br>
 
