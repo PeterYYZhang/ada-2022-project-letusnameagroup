@@ -54,7 +54,7 @@ Although the initial rating data was saved in text format, they were too big to 
 
 - Consumer reviews often contain valuable insights and opinions on different beers. In order to better understand consumer preferences and opinions, it is necessary to analyze these reviews. In this study, we used sentiment analysis and natural language processing techniques to analyze the tone and content of consumer reviews. We employed the SentimentIntensityAnalyzer module from the nltk library to identify the sentiment of consumer comments and identified the most frequently mentioned keywords by consumers. These findings provide important insights into consumer preferences and opinions on different beer styles.<br>
 
-  <img src="Image\4.png" width=400 height=320/> <img src="Image\6.png" width=400 height=320/>
+  <img src="Image\4.png" width=350 height=280/> <img src="Image\6.png" width=350 height=280/>
 
 
 
