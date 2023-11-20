@@ -1,7 +1,7 @@
 # Trends in the American Beer Market: How can we help the declining beer styles to revive?
 
 
-## Date story website
+## Data story website
 To learn more about our work, please visit our webpage[Let us make the most popular beer🍺!](https://letusmakepopularbeer.streamlit.app/).
 
 ## Abstract
